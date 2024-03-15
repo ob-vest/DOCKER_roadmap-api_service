@@ -8,7 +8,7 @@ console.log("Setting up server");
 const app = express();
 
 dotenv.config();
-
+console.log(process.env.DATABASE_URL)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

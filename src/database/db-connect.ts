@@ -11,6 +11,9 @@ export const pool = new Pool({
 });
 
 export const db = drizzle(pool, { schema });
-
-// resetDatabase();
-// seedDatabase();
+console.log("Inserting data");
+// db.insert(schema.requestType)
+// .values({title: "testType22"})
+// .catch(console.error);
+resetDatabase();
+seedDatabase();
