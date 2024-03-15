@@ -15,10 +15,16 @@ services:
       - .:/app/
     env_file:
       - .env
-    ports:
-      - 8000:3000
     depends_on:
       - db
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8000:80
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
 
 volumes:
   postgres_data:
