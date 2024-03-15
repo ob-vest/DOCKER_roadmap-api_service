@@ -15,5 +15,5 @@ console.log("Inserting data");
 // db.insert(schema.requestType)
 // .values({title: "testType22"})
 // .catch(console.error);
-resetDatabase();
-seedDatabase();
+// resetDatabase();
+// seedDatabase();

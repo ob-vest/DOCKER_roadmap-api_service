@@ -9,12 +9,18 @@ services:
       - ./dbscripts/:/dbscripts
     env_file:
       - .env
+    networks:
+      - dbnet
+
   app:
     image: roadmap:latest
     volumes:
       - .:/app/
     env_file:
       - .env
+    networks:
+      - dbnet
+      - webnet
     depends_on:
       - db
   nginx:
@@ -23,8 +29,17 @@ services:
       - 8000:80
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - webnet
     depends_on:
       - app
 
 volumes:
   postgres_data:
+
+networks:
+  dbnet:
+    driver: bridge
+  webnet:
+    driver: bridge
+
