@@ -1,0 +1,32 @@
+{
+  "name": "roadmap-api_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/server.js",
+    "dev": "tsc && node dist/server.js",
+    "db:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
+    "db:custom-generate": "drizzle-kit generate:pg --config=drizzle.config.ts --custom",
+    "db:push": "ts-node src/database/migrate.ts",
+    "db:prototyping": "drizzle-kit push:pg --config=drizzle.config.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.29.5",
+    "express": "^4.18.3",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/express": "^4.17.21",
+    "@types/pg": "^8.11.2",
+    "drizzle-kit": "^0.20.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
